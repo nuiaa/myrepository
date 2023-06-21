@@ -22,31 +22,31 @@ class sudoku_board(object):
         self.board=__create_board(board_file)
         pass
     def __create_board(self,board_file):
-        # create an initial matrix, or a list of a list
+       #matrix yap
 
         board=[]
-        # iterate over each line
+        #her line iter edilsin
         for line in board:
             line=line.strip()
         if len(line) !=9:
             board=[]
             raise sudoku_error("Sudokudaki her satır 9 karakter olmalıdır.")
-        #create a list for the line
+        #line oluştur
         board.append([])
         
-		# then iterate over each character
+		#iterate
         for c in line:
-		# Raise an error if there are not 9 lines
+		# 9 line yoksa hata fırlat
             if not c.isdigit():
                 raise sudoku_error("Sudokuda 0-9 rakamları geçerlidir")
-        # Add to the latest list for the line
+        
         board[-1].append(int(c))
-        # Raise an error if there are not 9 lines
+        # 9 line yoksa hata fırlat
 
         if len(board) !=9:
             raise sudoku_error("Sudokuda 9 satır uzunluğunda olmalıdır")
 
-		# Return the constructed board
+		
         return board
 
 
